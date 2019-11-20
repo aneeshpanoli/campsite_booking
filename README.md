@@ -17,6 +17,6 @@ SET UP SITE
     
 run python reservations.py
 
-    
+This is screenshot based. I will be making an html parsing version soon!
     
 
