@@ -6,14 +6,19 @@ from pygame import mixer
 
 class Make_reservation:
     '''Automatically checks the rec gov reservation availablity
-        Set up your screen resolution
     '''
     def __init__(self):
         self.scr_width = 1440
         self.scr_height = 900
         mixer.init()
 
-    def take_screenshot(self, scName, monitor_number):
+    def take_screenshot(self, scName, monitor_number=1):
+        '''
+        Takes screenshots at specified intervals
+        scName: name with path to save the screenshot
+        monitor_numer: if you have multiple monitors, 
+        specify the number
+        '''
         with mss.mss() as sct:
             mon = sct.monitors[monitor_number]
             monitor = {
@@ -28,6 +33,9 @@ class Make_reservation:
             mss.tools.to_png(sct_img.rgb, sct_img.size, output=output)
 
     def get_btn_pos(self, scName, monitor_number):
+        '''
+        Script to automatically click the reservation button
+        '''
         while True:
             time.sleep(2)
             self.take_screenshot(scName, monitor_number)
@@ -49,9 +57,10 @@ class Make_reservation:
             continue
 
 if __name__ == "__main__":
-    # series_shot()
-
+    monitor_number = 1
+    scName = 'path/to/screenhot/folder'
     run = Make_reservation()
-    scName = '/media/aneesh/io_python_usb/recreation.gov/reserve/scrot.png'
-    run.get_btn_pos(scName, 2)
-    # run.play_alarm()
+    #CAUTION: repeasted readwrite can reduce the life of ...
+    #your hard drive
+    # I used a sapare flash drive
+    run.get_btn_pos(scName, 1)
