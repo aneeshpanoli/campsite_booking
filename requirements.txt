@@ -1,7 +1,7 @@
 mss==4.0.3
 numpy==1.16.4
 pandas==0.24.2
-Pillow==6.0.0
+Pillow==8.3.2
 PyAutoGUI==0.9.45
 pygame==1.9.6
 PyGetWindow==0.0.6
