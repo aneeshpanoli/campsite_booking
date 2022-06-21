@@ -1,5 +1,5 @@
 mss==4.0.3
-numpy==1.16.4
+numpy==1.22.0
 pandas==0.24.2
 Pillow==6.0.0
 PyAutoGUI==0.9.45
